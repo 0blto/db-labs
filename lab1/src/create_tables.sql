@@ -6,6 +6,13 @@ create table if not exists person
     age    integer not null
 );
 
+create table if not exists iq_test
+(
+    person_id serial primary key references person(id),
+    score int4,
+    time_millis bigserial
+);
+
 create table if not exists tree_type
 (
     id serial primary key,

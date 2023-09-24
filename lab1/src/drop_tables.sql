@@ -1,5 +1,7 @@
 drop table if exists event_connection;
 
+drop table if exists iq_test;
+
 drop table if exists event;
 
 drop table if exists action_connection;

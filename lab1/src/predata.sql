@@ -1,5 +1,7 @@
 insert into person
 values (DEFAULT, 'Timmy', 'MALE', 12);
+insert into iq_test
+values ((select id from person where name='Timmy'), 43, 20);
 
 insert into tree_type
 values (DEFAULT, 'baobab');
@@ -39,4 +41,12 @@ values (DEFAULT,
         (select id from action where description='Тим насчупал ветку и полез вниз'),
         (select id from person where name='Timmy'),
         (select id from tree_object where description='just a usual strict branch')
+       );
+insert into action
+values (DEFAULT, 'Тим залез в авто');
+insert into action_connection
+values (DEFAULT,
+        (select id from action where description='Тим залез в авто'),
+        (select id from person where name='Timmy'),
+        (select id from tree_object where description='good car with powerful engine')
        );

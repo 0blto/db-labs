@@ -26,27 +26,21 @@ values (DEFAULT,
         'just a usual strict branch'
        );
 
-insert into event
-values (DEFAULT, 'Тим висел в полуметре от земли');
 insert into event_connection
 values (DEFAULT,
-        (select id from event where description='Тим висел в полуметре от земли'),
+        'Тим висел в полуметре от земли',
         (select id from person where name='Timmy'),
         NULL
        );
-insert into action
-values (DEFAULT, 'Тим насчупал ветку и полез вниз');
 insert into action_connection
 values (DEFAULT,
-        (select id from action where description='Тим насчупал ветку и полез вниз'),
+        'Тим насчупал ветку и полез вниз',
         (select id from person where name='Timmy'),
         (select id from tree_object where description='just a usual strict branch')
        );
-insert into action
-values (DEFAULT, 'Тим залез в авто');
 insert into action_connection
 values (DEFAULT,
-        (select id from action where description='Тим залез в авто'),
+        'Тим залез в авто',
         (select id from person where name='Timmy'),
         (select id from tree_object where description='good car with powerful engine')
        );

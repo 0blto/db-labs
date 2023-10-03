@@ -6,6 +6,5 @@ select score from iq_test where person_id=(
         )
 );
 
-select * from iq_test join person p on p.id = iq_test.person_id join action_connection e on e.person_id = p.id join tree_object t on t.id = tree_id where t.t;
 
 

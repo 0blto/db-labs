@@ -42,22 +42,11 @@ create table if not exists tree_object
     description text
 );
 
-create table if not exists event
-(
-    id  serial primary key,
-    description text not null
-);
-
-create table if not exists action
-(
-    id  serial primary key,
-    description text not null
-);
 
 create table if not exists event_connection
 (
     id  serial primary key,
-    event_id    integer not null references event(id),
+    event_description text not null,
     person_id integer not null references person(id),
     object_id integer references tree_object(id)
 );
@@ -65,7 +54,7 @@ create table if not exists event_connection
 create table if not exists action_connection
 (
     id  serial primary key,
-    action_id    integer not null references action(id),
+    action_description text not null,
     person_id integer not null references person(id),
     object_id integer references tree_object(id)
 );
